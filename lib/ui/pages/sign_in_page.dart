@@ -1,4 +1,6 @@
 import 'package:e_wallet_app/shared/theme.dart';
+import 'package:e_wallet_app/ui/widgets/buttons.dart';
+import 'package:e_wallet_app/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -45,54 +47,14 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // == email ...
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Adress',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+                const CustomFormField(title: 'Email Address'),
                 const SizedBox(
                   height: 16,
                 ),
                 // == password ...
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                  title: 'Password',
+                  obscureText: true,
                 ),
                 const SizedBox(
                   height: 8,
@@ -108,26 +70,10 @@ class SignInPage extends StatelessWidget {
                   height: 30,
                 ),
                 // == SIGN IN BUTTON
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: purpleColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(56),
-                      ),
-                    ),
-                    child: Text(
-                      'Sign In',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
-                ),
+                CustomFilledButton(
+                  title: 'Sign In',
+                  onPressed: () {},
+                )
                 // == SIGN IN BUTTON
               ],
             ),
@@ -138,17 +84,7 @@ class SignInPage extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Center(
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Create New Account',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
+          CustomTextButton(title: 'Create New Account'),
           // === CREATE NEW ACCOUNT
         ],
       ),
