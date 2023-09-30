@@ -3,8 +3,8 @@ import 'package:e_wallet_app/ui/widgets/buttons.dart';
 import 'package:e_wallet_app/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +26,19 @@ class SignInPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 30,
+          ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Join Us to Unlock\n Your Growth',
             style: blackTextStyle.copyWith(
+              fontWeight: bold,
               fontSize: 20,
-              fontWeight: semiBold,
             ),
           ),
           const SizedBox(
             height: 30,
           ),
-          //  ==== TYPING INPUT SIGN IN
           Container(
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
@@ -44,50 +46,38 @@ class SignInPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // == email ...
-                const CustomFormField(title: 'Email Address'),
+                const CustomFormField(title: 'Full Name'),
                 const SizedBox(
                   height: 16,
                 ),
-                // == password ...
+                const CustomFormField(title: 'Email Adress'),
+                const SizedBox(
+                  height: 16,
+                ),
                 const CustomFormField(
                   title: 'Password',
                   obscureText: true,
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                // == SIGN IN BUTTON
                 CustomFilledButton(
-                  title: 'Sign In',
-                  onPressed: () {},
-                )
-                // == SIGN IN BUTTON
+                  title: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-set-profile');
+                  },
+                ),
               ],
             ),
           ),
-          //  ==== TYPING INPUT SIGN IN
-
-          // === CREATE NEW ACCOUNT
           const SizedBox(
             height: 50,
           ),
           CustomTextButton(
-            title: 'Sign Up',
+            title: 'Sign In',
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
           ),
         ],

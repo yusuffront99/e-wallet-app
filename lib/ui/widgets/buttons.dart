@@ -1,5 +1,4 @@
 import 'package:e_wallet_app/shared/theme.dart';
-import 'package:e_wallet_app/ui/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomFilledButton extends StatelessWidget {
@@ -62,14 +61,7 @@ class CustomTextButton extends StatelessWidget {
           .infinity, //== menambah width dengan menyesuaikan luas bidang layar
       height: 24,
       child: TextButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SignInPage(),
-            ),
-          );
-        },
+        onPressed: onPressed,
         style: TextButton.styleFrom(padding: EdgeInsets.zero),
         child: Text(
           title,

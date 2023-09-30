@@ -20,7 +20,7 @@ class CustomFormField extends StatelessWidget {
         Text(
           title,
           style: blackTextStyle.copyWith(
-            fontWeight: medium,
+            fontWeight: FontWeight.w600,
           ),
         ),
         const SizedBox(
