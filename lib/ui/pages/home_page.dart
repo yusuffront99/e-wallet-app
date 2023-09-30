@@ -1,4 +1,5 @@
 import 'package:e_wallet_app/shared/theme.dart';
+import 'package:e_wallet_app/ui/widgets/home_latest_transaction_item.dart';
 import 'package:e_wallet_app/ui/widgets/home_service_item.dart';
 import 'package:flutter/material.dart';
 
@@ -81,6 +82,7 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildServices(),
+          buildLatestTranscation(),
         ],
       ),
     );
@@ -308,4 +310,63 @@ class HomePage extends StatelessWidget {
     );
   }
   // === services
+
+  // === latest transaction
+  Widget buildLatestTranscation() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Latest Transaction',
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 14),
+            padding: const EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: whiteColor,
+            ),
+            child: const Column(
+              children: [
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat1.png',
+                  title: 'Top Up',
+                  time: 'Yesterday',
+                  value: '+ 450.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat2.png',
+                  title: 'Cashbask',
+                  time: 'Sep 11',
+                  value: '+ 22.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat3.png',
+                  title: 'Withdraw',
+                  time: 'Sep 2',
+                  value: '+ 90.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat4.png',
+                  title: 'Transfer',
+                  time: 'Ags 20',
+                  value: '- 150.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat5.png',
+                  title: 'Electric',
+                  time: 'Jun 12',
+                  value: '+ 350.000',
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  // === latest transaction
 }
