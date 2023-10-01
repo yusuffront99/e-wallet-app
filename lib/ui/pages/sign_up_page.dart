@@ -9,7 +9,6 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
@@ -72,7 +71,7 @@ class SignUpPage extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           CustomTextButton(
             title: 'Sign In',
