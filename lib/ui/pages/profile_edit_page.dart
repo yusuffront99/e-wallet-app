@@ -10,7 +10,9 @@ class ProfileEditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Profile'),
+        title: const Text(
+          'Edit Profile',
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -28,19 +30,19 @@ class ProfileEditPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                CustomFormField(title: 'Username'),
+                const CustomFormField(title: 'Username'),
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFormField(title: 'Full Name'),
+                const CustomFormField(title: 'Full Name'),
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFormField(title: 'Email Address'),
+                const CustomFormField(title: 'Email Address'),
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFormField(
+                const CustomFormField(
                   title: 'Password',
                   obscureText: true,
                 ),

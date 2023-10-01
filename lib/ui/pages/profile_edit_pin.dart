@@ -28,11 +28,11 @@ class ProfileEditPin extends StatelessWidget {
             ),
             child: Column(
               children: [
-                CustomFormField(title: 'Old Pin'),
+                const CustomFormField(title: 'Old Pin'),
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFormField(title: 'New Pin'),
+                const CustomFormField(title: 'New Pin'),
                 const SizedBox(
                   height: 30,
                 ),

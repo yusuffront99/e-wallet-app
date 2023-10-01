@@ -39,6 +39,10 @@ dependencies:
   carousel_slider: ^4.2.1
   url_launcher: ^6.1.14
 
+# linter:
+#   rules:
+#     - use_build_context_synchronously
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
