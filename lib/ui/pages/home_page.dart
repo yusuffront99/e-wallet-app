@@ -1,6 +1,7 @@
 import 'package:e_wallet_app/shared/theme.dart';
 import 'package:e_wallet_app/ui/widgets/home_latest_transaction_item.dart';
 import 'package:e_wallet_app/ui/widgets/home_service_item.dart';
+import 'package:e_wallet_app/ui/widgets/home_tips_item.dart';
 import 'package:e_wallet_app/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
 
@@ -79,76 +80,82 @@ class HomePage extends StatelessWidget {
           horizontal: 24,
         ),
         children: [
-          buildProfile(),
+          buildProfile(context),
           buildWalletCard(),
           buildLevel(),
           buildServices(),
           buildLatestTranscation(),
           buildSendAgain(),
+          buildFriendlyTips(),
         ],
       ),
     );
   }
 
   // === profile section
-  Widget buildProfile() {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 40,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Howdy',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
+  Widget buildProfile(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/profile');
+      },
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 40,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Howdy',
+                  style: greyTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 2,
-              ),
-              Text(
-                'Jhon Alexandra',
-                style: blackTextStyle.copyWith(
-                  fontSize: 20,
-                  fontWeight: semiBold,
+                const SizedBox(
+                  height: 2,
                 ),
-              )
-            ],
-          ),
-          Container(
-            width: 60,
-            height: 60,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/img_profile.png'),
-              ),
+                Text(
+                  'Jhon Alexandra',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 20,
+                    fontWeight: semiBold,
+                  ),
+                )
+              ],
             ),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                width: 16,
-                height: 16,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: whiteColor,
+            Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/img_profile.png'),
                 ),
-                child: Center(
-                  child: Icon(
-                    Icons.check_circle,
-                    color: greenColor,
-                    size: 14,
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 16,
+                  height: 16,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: whiteColor,
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.check_circle,
+                      color: greenColor,
+                      size: 14,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -417,4 +424,56 @@ class HomePage extends StatelessWidget {
     );
   }
   // === send again
+
+  // === friendly tips
+  Widget buildFriendlyTips() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+        bottom: 50,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          const Wrap(
+            spacing: 35,
+            runSpacing: 18,
+            children: [
+              HomeTipsItem(
+                imgUrl: 'assets/img_tips1.png',
+                title: 'Best welcome gogogolllellele',
+                url: 'https://pub.dev/',
+              ),
+              HomeTipsItem(
+                imgUrl: 'assets/img_tips2.png',
+                title: 'Best welcome gogogolllellele',
+                url: 'https://www.google.com',
+              ),
+              HomeTipsItem(
+                imgUrl: 'assets/img_tips3.png',
+                title: 'Best welcome gogogolllellele',
+                url: 'https://www.youtube.com',
+              ),
+              HomeTipsItem(
+                imgUrl: 'assets/img_tips4.png',
+                title: 'Best welcome gogogolllellele',
+                url: 'https://www.google.com',
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+  // === friendly tips
 }
