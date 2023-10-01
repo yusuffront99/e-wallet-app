@@ -15,8 +15,12 @@ class _PinPageState extends State<PinPage> {
   addPin(String number) {
     if (pinController.text.length < 6) {
       setState(() {
-        pinController.text = pinController.text + number;
+        pinController.text += number;
       });
+    }
+
+    if (pinController.text == '123456') {
+      Navigator.pop(context, true);
     }
   }
 
