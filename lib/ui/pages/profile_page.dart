@@ -78,8 +78,10 @@ class ProfilePage extends StatelessWidget {
                   iconUrl: 'assets/ic_edit_profile.png',
                   title: 'Edit Profile',
                   onTap: () async {
-                    if (await Navigator.pushNamed(context, '/pin') == true) {
-                      Navigator.pushNamed(context, '/profile-edit');
+                    final currentContext = context;
+                    if (await Navigator.pushNamed(currentContext, '/pin') ==
+                        true) {
+                      Navigator.pushNamed(currentContext, '/profile-edit');
                     }
                   },
                 ),

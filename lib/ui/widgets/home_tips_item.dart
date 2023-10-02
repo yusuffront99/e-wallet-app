@@ -1,6 +1,7 @@
 import 'package:e_wallet_app/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HomeTipsItem extends StatelessWidget {
   final String imgUrl;
@@ -18,8 +19,8 @@ class HomeTipsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        if (await canLaunch(url)) {
-          await launch(url);
+        if (await launchUrlString(url)) {
+          await launchUrlString(url);
         }
       },
       child: Container(
