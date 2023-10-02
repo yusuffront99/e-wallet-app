@@ -1,3 +1,4 @@
+import 'package:e_wallet_app/shared/share_methods.dart';
 import 'package:e_wallet_app/shared/theme.dart';
 import 'package:e_wallet_app/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,13 @@ class _PinPageState extends State<PinPage> {
       });
     }
 
-    if (pinController.text == '123456') {
-      Navigator.pop(context, true);
+    if (pinController.text.length == 6) {
+      if (pinController.text == '123456') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackBar(
+            context, 'PIN yand anda masukan salah, silakan coba lagi');
+      }
     }
   }
 
