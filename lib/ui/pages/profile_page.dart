@@ -81,6 +81,7 @@ class ProfilePage extends StatelessWidget {
                     final currentContext = context;
                     if (await Navigator.pushNamed(currentContext, '/pin') ==
                         true) {
+                      // ignore: use_build_context_synchronously
                       Navigator.pushNamed(currentContext, '/profile-edit');
                     }
                   },
@@ -90,6 +91,7 @@ class ProfilePage extends StatelessWidget {
                   title: 'My Pin',
                   onTap: () async {
                     if (await Navigator.pushNamed(context, '/pin') == true) {
+                      // ignore: use_build_context_synchronously
                       Navigator.pushNamed(context, '/profile-edit-pin');
                     }
                   },

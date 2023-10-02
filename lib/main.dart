@@ -12,9 +12,12 @@ import 'package:e_wallet_app/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:e_wallet_app/ui/pages/sign_up_set_profile_page.dart';
 import 'package:e_wallet_app/ui/pages/sign_up_success_page.dart';
 import 'package:e_wallet_app/ui/pages/splash_page.dart';
-import 'package:e_wallet_app/ui/pages/top_success_page.dart';
+import 'package:e_wallet_app/ui/pages/topup_success_page.dart';
 import 'package:e_wallet_app/ui/pages/topup_amount_page.dart';
 import 'package:e_wallet_app/ui/pages/topup_page.dart';
+import 'package:e_wallet_app/ui/pages/transfer_amount_page.dart';
+import 'package:e_wallet_app/ui/pages/transfer_page.dart';
+import 'package:e_wallet_app/ui/pages/transfer_success_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -53,9 +56,14 @@ class MyApp extends StatelessWidget {
         '/profile-edit': (context) => const ProfileEditPage(),
         '/profile-edit-pin': (context) => const ProfileEditPin(),
         '/profile-edit-success': (context) => const ProfileEditSuccessPage(),
+        // === TOP UP
         '/topup': (context) => const TopupPage(),
         '/topup-amount': (context) => const TopupAmountPage(),
         '/topup-success': (context) => const TopupSuccessPage(),
+        // ========== SEND AND TRANSFER
+        '/transfer': (context) => const TransferPage(),
+        '/transfer-amount': (context) => const TransferAmountPage(),
+        '/transfer-success': (context) => const TransferSuccessPage(),
       },
     );
   }
